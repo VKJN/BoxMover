@@ -1,15 +1,11 @@
 #include "Button.h"
 
-int Button::Uniqindex = 1;
-
 Button::Button(sf::Vector2f startPosition) {
 	button.setSize(sf::Vector2f(30.f, 30.f));
 	button.setFillColor(sf::Color::White);
 	button.setPosition(startPosition);
 	button.setOutlineColor(sf::Color::Black);
 	button.setOutlineThickness(2);
-
-	this->index = Uniqindex++;
 }
 
 void Button::draw(sf::RenderWindow& window) {
@@ -32,10 +28,6 @@ void Button::movement(int direction) {
 		button.move(sf::Vector2f(-32, 0));
 		break;
 	}
-}
-
-int Button::getIndex() {
-	return index;
 }
 
 sf::Vector2f Button::getPosition() {

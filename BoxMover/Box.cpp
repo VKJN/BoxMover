@@ -1,15 +1,11 @@
 #include "Box.h"
 
-int Box::Uniqindex = 1;
-
 Box::Box(sf::Vector2f startPosition) {
 	box.setSize(sf::Vector2f(30.f, 30.f));
 	box.setFillColor(sf::Color(69, 52, 42));
 	box.setPosition(startPosition);
 	box.setOutlineColor(sf::Color::Black);
 	box.setOutlineThickness(2);
-
-	this->index = Uniqindex++;
 }
 
 void Box::draw(sf::RenderWindow& window) {
@@ -32,10 +28,6 @@ void Box::movement(int direction) {
 		box.move(sf::Vector2f(-32, 0));
 		break;
 	}
-}
-
-int Box::getIndex() {
-	return index;
 }
 
 void Box::setPosition(sf::Vector2f position) {
